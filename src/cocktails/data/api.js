@@ -5,6 +5,7 @@ export const getRandomCocktail = async () => {
         redirect: 'follow',
     };
     const response = await fetch(BASE_URL+"/random.php", requestOptions);
-    const result = await response.text();
+    const result = await response.json();
     console.log(result);
+    return result;
 };
