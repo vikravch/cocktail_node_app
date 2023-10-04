@@ -11,6 +11,9 @@ let currentPage = 'main';
     async ()=>{
         const repository = new CocktailRepository();
         const cocktail = await repository.getRandomCocktail();
-        rootNode.innerHTML = MainPage(cocktail);
+        const categories = await repository.getCategories();
+        console.log(categories);
+
+        rootNode.innerHTML = MainPage(cocktail,categories);
     }
 )();
